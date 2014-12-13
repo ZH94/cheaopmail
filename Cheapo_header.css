@@ -1,0 +1,77 @@
+
+/*========================== header ==========================*/
+
+#C_header{		
+	color:#ffffff;
+}
+
+#header_wrapper{
+	background: #000;
+	width: 1200px;
+	margin:0px auto;
+	text-align: center;
+	height:50px;
+}
+
+#header_sub1{
+	float:left;
+	padding: 5px 25px 5px 30px;
+	font-size: 30px;
+	}
+
+#header_sub2{
+	float:left;
+	color:#ffffff;
+	padding:10px 10px 5px 10px;
+}
+
+#header_sub3{
+	float:left;
+	padding:15px 10px 0px 10px;
+}
+
+#nav_bar ul {
+	list-style: none;	
+	float:left;
+	/*padding: 0px 10px 10px 40px;*/
+} 
+
+#nav_bar ul li{
+	float: left;
+	position: relative;
+	text-align: center;
+	color:#ffffff;
+	width:85px;
+	margin-right: 3px;
+}
+#navbar ul li:hover{
+	background: #333;	
+}
+
+#nav_bar li a,visited{
+	display:block;
+	text-decoration: none;
+	color:#ffffff;
+	padding: 8px;	
+}
+
+#nav_bar ul li a:hover{
+	background:#333;
+	display: block;
+	width:70px;
+}
+
+
+
+/*========================== footer ==========================*/
+/*#C_footer{
+	padding-right: 100px;
+	padding-left: 100px;
+	padding-bottom: 0px;
+	
+}
+#footer_wrapp{
+	padding: 10px 0px 10px 100px;
+	height: 30px;
+	background-color: #333;
+}*/

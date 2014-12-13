@@ -1,0 +1,174 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{	
+	font-family: "Trebuchet MS","Myriad Pro",Arial,sans-serif;
+	background: -webkit-linear-gradient(black, white); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(black, white); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(black, white); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(black, white); /* Standard syntax */
+}
+
+
+
+/*========================== body ==========================*/
+#C_body{
+	width: 1200px;
+	margin:0px auto;
+	padding-top: 20px;
+	height: 800px;
+}
+
+#body_wrapper{
+	text-align: center;
+	width: 1150px;
+	margin: 0px auto;
+}
+
+#sub_body{
+	width: 1075px;
+	margin: 0px auto;
+	padding-top: 5px;
+}
+
+.sector_scheme{
+	display: block;
+	width:550px;
+	background-color: #ffffff;
+	margin:0px auto;
+}
+
+#sector1{
+	float: left;
+	position:relative;
+	width:500px;
+}
+
+#sector2{
+	margin-top: 20px;
+	float: right;
+	position:relative;
+	width:500px;
+	height: 700px;
+}
+
+#sector3{
+	float: left;
+	position:relative;
+	margin-top:30px;
+	width:500px;
+
+}
+
+form{
+	margin: 0px auto; 
+	position: relative;
+	border-style: groove;
+	vertical-align: center;
+	text-align: left;
+	width: 450px;
+}
+
+form,input,textarea{
+	font: 13px Helvetica, Arial, sans-serif;
+	margin: 5px 5px 10px;
+	width: 80%;
+}
+form#comp_msg{
+	margin:0px auto;
+}
+
+#dspusers{}
+#resentmsg{}
+
+/* ===================== Tables ===================== */
+table{
+	margin:0px auto;
+	border-collapse:collapse;
+	border-spacing:2px;
+	font-family: Tahoma;
+	font-size: 13px;
+	width: 400px;
+}
+
+th{
+	color:#ffffff;
+	background-color : #687291;
+	padding:2px 10px 2px 10px;
+}
+
+/*tbody tr:nth-child(2n){background-color: #dfe1e7;}
+tbody tr:nth-child(2n+1){background-color: #eeeff2;}*/
+tr{border:solid white 1px; border-bottom: solid #7A7A7A;}
+td{padding:0px 10px 0px 10px;}
+td.user{text-align:left; width: 100px;}
+td.sub{text-align:left; width: 300px;}
+
+.msg_field{
+	margin:0px auto; 
+	padding:5px;
+}
+
+/* ============== inbox ==============*/
+#maillist{
+	display: block;
+	float: left;
+	position:relative;
+	margin-top:30px;
+	width:500px;
+	background-color:#ffffff;
+}
+
+#maildisplay{
+	display: block;
+	margin-top:20px;
+	float:left;
+	position:relative;
+	margin-top:30px;
+	height:420px; 
+	width:490px;
+	background-color:#ffffff;
+}
+
+#mailreply{
+	display: block;
+	margin:0px auto;
+	position:relative;
+	margin-top:30px;
+	height:400px; 
+	width:460px;
+	background-color:#ffffff;
+}
+
+form#reply_msg{
+	margin:0px auto;
+	height:400px; 
+	width:460px;
+}
+
+#cable{
+float: left;
+border:10px solid white;
+height:600px;
+width:500px; 
+}
+#subj{
+float:right;
+border:10px solid white; 
+height:300px;
+width:350px;
+
+}
+#reply{
+border:10px solid white;
+display:hidden;
+height:250px;
+width:350px;
+margin: auto;
+float: right;
+
+
+ 
+}
