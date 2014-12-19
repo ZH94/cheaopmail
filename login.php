@@ -34,10 +34,7 @@ if(isset($_GET['logout'])){
 				</div>
 				<div id = "header_sub2" >
 					<div id = "nav_bar">
-						<ul>
-							<li><a href="#"> Login </a></li>
-							<li><a href="#"> Logout </a></li>
-						</ul>
+					
 					</div>
 				</div>
 				<div id = "header_sub3" >
@@ -47,9 +44,7 @@ if(isset($_GET['logout'])){
 		</div>
 		<div id="C_body">
 			<div id="body_wrapp">
-
-
-				<form action="" method="POST" autocomplete="on">
+				<form action="" method="POST" autocomplete="on" Style="width:400px; background-color:white; margin:0px auto; margin-top:200px;">
 					<div>
 						<label for="username" class="uname" > Your email or username </label>
 						<input class="field" name="username" required="required" type="text" placeholder="myusername or myusername@gmail.com">
