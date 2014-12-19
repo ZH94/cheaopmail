@@ -3,81 +3,83 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2013 at 05:12 AM
 -- Server version: 5.5.32
--- PHP Version: 5.4.19
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `cheapomail`
---
-CREATE DATABASE IF NOT EXISTS `cheapomail` DEFAULT CHARACTER SET UTF8 COLLATE latin1_swedish_ci;
-USE `cheapomail`;
+-- PHP Version: 5.5.12
 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
---
 -- Database: `cheapousers`
---
-CREATE DATABASE IF NOT EXISTS `cheapousers` DEFAULT CHARACTER SET UTF8 COLLATE utf8_swedish_ci;
+CREATE DATABASE IF NOT EXISTS `cheapousers` DEFAULT CHARACTER SET UTF8 /*latin1*/ COLLATE latin1_swedish_ci;
 USE `cheapousers`;
 
--- --------------------------------------------------------
---
--- Table structure for table `message`
---
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `message` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `body` varchar(200) NOT NULL,
-  `subject` varchar(100) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `recipient_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=UTF8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `message_read`
---
-
-CREATE TABLE IF NOT EXISTS `message_read` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `message_id` int(11) NOT NULL,
-  `reader_id` int(11) NOT NULL,
-  `date` date NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=UTF8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
---
-
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `firstname` varchar(40) NOT NULL DEFAULT '''''',
-  `lastname` varchar(40) NOT NULL DEFAULT '''''',
-  `pword` varchar(30) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `pword` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=UTF8 AUTO_INCREMENT=1 ;
 
+-- Populating table `user`
+-- Dumping users who are admins 
+INSERT INTO `users` (`firstname`, `lastname`, `pword`, `username`) VALUES
+('admin', 'admin', 'admin1001', 'admin'),
+('Admin', 'Flemmings', 'Admin1', 'Admin.Flemmings'),
+('Admin', 'Robinson', 'Admin2', 'Admin.Robinson'),
+('Admin', 'Hinds', 'Admin3', 'Admin.Hinds'),
+('Jermaine', 'Flemmings', 'J.Flemmings001', 'Jermaine.F'),
+('Roshane', 'Robinson', 'R.Robinson001', 'Roshane.R'),
+('Zola', 'Hinds', 'Z.Hinds001', 'Zola.');
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `username`) VALUES
-(1, 'admin', 'admin', 'admin1001', 'admin');
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- Dumping generic users
+INSERT INTO `users` (`firstname`, `lastname`, `pword`, `username`) VALUES 
+('David', 'Baine', 'D.Baine001', 'David.B'),
+('user1', 'Random', 'Random1', 'user1.R'),
+('user2', 'Random', 'Random2', 'user2.R'),
+('user3', 'Random', 'Random3', 'user3.R'),
+('user4', 'Random', 'Random4', 'user4.R'),
+('user5', 'Random', 'Random5', 'user5.R');
+
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
+-- Table structure for table `message`
+CREATE TABLE IF NOT EXISTS `message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `recipient_id` int(11)) NOT NULL,
+  `subject` varchar(100) NOT NULL,
+  `body` varchar(1000) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+)  ENGINE=MyISAM DEFAULT CHARSET=UTF8 AUTO_INCREMENT=1 ;
+
+-- Populating table `message`
+INSERT INTO `message` (`user_id`, `recipient_id`, `subject`,`body`) VALUES
+(2, 3,'new users', 'I just gave you both generic user profiles'),
+(3,2,'Re:new users',"Ahh flemmo. I'll go pree"),
+(2,1,'hello admin',"Hi there random admin");
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
+-- Table structure for table `message_read`
+CREATE TABLE IF NOT EXISTS `message_read` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `message_id` int(11) NOT NULL,
+  `reader_id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=UTF8 AUTO_INCREMENT=1 ;
+
+
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
